@@ -8,6 +8,9 @@ const nextButton = document.getElementById("next-btn");
 const couponInput = document.getElementById("apply-btn");
 const phoneNumberInput = document.getElementById("phone-number-input");
 
+//after apply the id the apply coupon seCtion will be hIde
+const applySection = document.getElementById("place-coupon");
+
 applyButton.setAttribute("disabled", true);
 nextButton.setAttribute("disabled", true);
 applyButton.style.cursor = "not-allowed";
@@ -64,7 +67,7 @@ document.querySelectorAll(".seat").forEach(function (seat) {
 });
 
 applyButton.addEventListener("click", function () {
-  const couponCode = couponInput.value.trim(); // Get the value entered in the coupon input field
+  const couponCode = couponInput.value.trim();
   if (couponCode === "") {
     return;
   }
@@ -100,6 +103,7 @@ function calculateTheTotalPrice(coupon) {
   }
 
   countTotalPrice.textContent = discountedPrice.toFixed(2);
+  applySection.style.display = "none"; // Hide the apply section after applying the coupon
 }
 
 function updateSeatInDisplay() {
