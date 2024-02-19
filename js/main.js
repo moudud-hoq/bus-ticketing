@@ -84,24 +84,23 @@ phoneNumberInput.addEventListener("input", function () {
   }
 });
 
+
+
 function calculateTheTotalPrice(coupon) {
   const countTotalPrice = document.getElementById("grand-total-price");
   const totalPrice = selectedSeats.length * 550;
   let discountedPrice = totalPrice;
 
   // Applying discounts based on coupon
-  switch (coupon) {
-    case "NEW15":
-      discountedPrice *= 0.85;
-      break;
-    case "COUPLE 20":
-      discountedPrice *= 0.8;
-      break;
-    default:
-      alert("Invalid coupon code.");
-      return;
+  if (coupon === "NEW15") {
+    discountedPrice *= 0.85;
+  } else if (coupon === "COUPLE 20") {
+    discountedPrice *= 0.8;
+  } else {
+    alert("Invalid coupon code.");
+    return;
   }
-
+  
   countTotalPrice.textContent = discountedPrice.toFixed(2);
   applySection.style.display = "none"; // Hide the apply section after applying the coupon
 }

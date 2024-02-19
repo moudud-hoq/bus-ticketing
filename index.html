@@ -144,15 +144,16 @@
           <div class="w-1/2">
             <div class="card bg-[#F78C9C]">
               <div
-                class="w-full card-body flex flex-row items-center"
-                style="
+              class="w-full card-body flex flex-row items-center"
+              style="
                   background-image: url(images/cupon-devider.png);
                   background-position: 60% center;
                   background-size: 40%;
                   background-repeat: no-repeat;
                   background-size: contain;
-                "
-              >
+                  background-color: rgba(255, 255, 255, 0.1); /* Adjust the opacity value (0.0 to 1.0) */
+              "
+          >
                 <div class="w-2/3 space-y-3 active">
                   <h1 class="text-3xl font-bold active">20% OFF</h1>
                   <p class="font-bold">On your next purchase</p>
@@ -170,6 +171,7 @@
               </div>
             </div>
           </div>
+          
         </div>
 
         <div class="pt-12 pb-24">
@@ -492,7 +494,7 @@
                 <!--Seat Account Section Right -->
                 <div
                   class="w-2/5 space-y-3 p-8 flex flex-col justify-between rounded-lg"
-                 >
+                >
                   <!-- right top -->
                   <div class="flex justify-between">
                     <h4 class="text-md font-bold">Select Your Seat</h4>
@@ -539,9 +541,6 @@
                       </table>
                     </div>
 
-
-
-
                     <div class="flex justify-between items-center font-bold">
                       <p class="">Total Price</p>
                       <p class="">BDT <span id="changing-price">0</span></p>
@@ -577,10 +576,6 @@
                     </div>
                   </div>
 
-
-
-
-                  
                   <div class="flex flex-col gap-5">
                     <label for="text" class="font-bold">Passenger Name*</label>
                     <label class="input input-bordered flex items-center gap-2">
@@ -591,7 +586,9 @@
                       />
                     </label>
 
-                    <label id="phone-number-input" for="text" class="font-bold">Phone Number*</label>
+                    <label id="phone-number-input" for="text" class="font-bold"
+                      >Phone Number*</label
+                    >
                     <label class="input input-bordered flex items-center gap-2">
                       <input
                         type="text"
@@ -647,7 +644,7 @@
                               <form method="dialog">
                                 <!-- if there is a button, it will close the modal -->
                                 <button
-                                  id="continue-ticket"
+                                  id="modal-continue"
                                   class="btn font-bold text-white bg-[#36a125] hover:bg-[#36a125]"
                                 >
                                   Continue
@@ -665,13 +662,11 @@
                     <a class="link">Cancellation Policy</a>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
         <!-- Seat Selection and Seat Account Section ENd -->
-
       </div>
     </section>
     <!-- Ticket Section End -->
