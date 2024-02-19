@@ -6,6 +6,7 @@ const totalSeatNumber = document.getElementById("total-seat");
 const applyButton = document.getElementById("apply-btn");
 const nextButton = document.getElementById("next-btn");
 const couponInput = document.getElementById("apply-btn");
+const phoneNumberInput = document.getElementById("phone-number-input");
 
 applyButton.setAttribute("disabled", true);
 nextButton.setAttribute("disabled", true);
@@ -70,6 +71,16 @@ applyButton.addEventListener("click", function () {
   calculateTheTotalPrice(couponCode);
 });
 
+phoneNumberInput.addEventListener("input", function () {
+  if (selectedSeats.length > 0 && phoneNumberInput.value.trim() !== "") {
+    nextButton.removeAttribute("disabled");
+    nextButton.style.cursor = "pointer";
+  } else {
+    nextButton.setAttribute("disabled", true);
+    nextButton.style.cursor = "not-allowed";
+  }
+});
+
 function calculateTheTotalPrice(coupon) {
   const countTotalPrice = document.getElementById("grand-total-price");
   const totalPrice = selectedSeats.length * 550;
@@ -80,7 +91,7 @@ function calculateTheTotalPrice(coupon) {
     case "NEW15":
       discountedPrice *= 0.85;
       break;
-    case "COUPLE20":
+    case "COUPLE 20":
       discountedPrice *= 0.8;
       break;
     default:
